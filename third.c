@@ -1,23 +1,27 @@
 #include <stdio.h>
 int matrix();
+int fibonacci();
 int main()
 {
-    int t1=0,t2=1,i,n,NextTerm;
-    printf("Enter the number:  ");
+    int n;
+    printf("choose the program: \n \
+    1. want to print fibonacci. \n \
+    2. want to sum two matrix. \n");
     scanf("%d",&n);
-    printf("The fibonacci series: %d,%d",t1,t2);
-    NextTerm=t1+t2;
 
-    for(i=3;i<=n;i++)
-    {
-        printf(",%d",NextTerm);
-        t1=t2;
-        t2=NextTerm;
-        NextTerm=t1+t2;
-
-    }
+    switch (n)
     
-    matrix();
+    {
+    case 1:
+        fibonacci();
+        break;
+    case 2:
+        matrix();
+        break;
+    
+    default:
+        break;
+    }
     return 0;
 
 }
@@ -80,4 +84,21 @@ Row: ");
         printf("\n");
     }
     
+}
+int fibonacci()
+{
+    int t1=0,t2=1,i,n,NextTerm;
+    printf("Enter the number:  ");
+    scanf("%d",&n);
+    printf("The fibonacci series: %d,%d",t1,t2);
+    NextTerm=t1+t2;
+
+    for(i=3;i<=n;i++)
+    {
+        printf(",%d",NextTerm);
+        t1=t2;
+        t2=NextTerm;
+        NextTerm=t1+t2;
+
+    }
 }
